@@ -32,7 +32,7 @@ export class TemaController{
         return this.temaService.findAllByDescricao(descricao);
     }
 
-    @Post('/criar')
+    @Post('/cadastrar')
     @HttpCode(HttpStatus.CREATED) 
     create(@Body() tema: Tema): Promise<Tema>{
         return this.temaService.create(tema);

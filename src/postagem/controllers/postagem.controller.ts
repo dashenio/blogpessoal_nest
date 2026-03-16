@@ -32,7 +32,7 @@ export class PostagemController{
         return this.postagemService.findAllByTitulo(titulo);
     }
 
-    @Post('/criar')
+    @Post('/cadastrar')
     @HttpCode(HttpStatus.CREATED) 
     create(@Body() postagem: Postagem): Promise<Postagem>{
         return this.postagemService.create(postagem);

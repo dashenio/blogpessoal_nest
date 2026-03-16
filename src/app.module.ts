@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { ProdService } from './data/services/prod.service';
+import { DevService } from './data/services/dev.service';
 
 
 
@@ -14,7 +15,7 @@ import { ProdService } from './data/services/prod.service';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRootAsync({
-	    useClass: ProdService, // só alterar para DevService se for usar localmente
+	    useClass: DevService, // só alterar para DevService se for usar localmente
       imports: [ConfigModule],
     }),
     PostagemModule, TemaModule, AuthModule, UsuarioModule
